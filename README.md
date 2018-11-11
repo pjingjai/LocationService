@@ -5,6 +5,7 @@ RESTful web service with Spring Boot and MySQL
 1.Tomcat
 2.MySQL
 3.Maven
+
 วิธีรันเซอร์วิสบน Windows
 1.เปิดไฟล์ C:\Users\pun\Desktop\Location-Service\src\main\resources\application.properties แล้วแก้ username กับ password MySQL
 2.สร้าง schema ชื่อ "location-service"
