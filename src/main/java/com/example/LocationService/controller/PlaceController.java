@@ -16,26 +16,26 @@ public class PlaceController {
     @Autowired
     PlaceRepository placeRepository;
     
- // Get All Notes
+ // Get All
     @GetMapping("/places")
     public List<Place> getAllPlaces() {
         return placeRepository.findAll();
     }
     
- // Create a new Note
+ // Create
     @PostMapping("/places")
     public Place createPlace(@Valid @RequestBody Place place) {
         return placeRepository.save(place);
     }
     
- // Get a Single Note
+ // Get One
     @GetMapping("/places/{id}")
     public Place getPlaceById(@PathVariable(value = "id") Long placeId) {
         return placeRepository.findById(placeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Place", "id", placeId));
     }
     
- // Update a Note
+ // Update
     @PutMapping("/places/{id}")
     public Place updatePlace(@PathVariable(value = "id") Long placeId,
                                             @Valid @RequestBody Place placeDetails) {
@@ -54,7 +54,7 @@ public class PlaceController {
         return updatedPlace;
     }
     
-    // Delete a Note
+    // Delete
     @DeleteMapping("/places/{id}")
     public ResponseEntity<?> deletePlace(@PathVariable(value = "id") Long placeId) {
         Place place = placeRepository.findById(placeId)
